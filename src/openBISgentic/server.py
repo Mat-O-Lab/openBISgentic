@@ -20,7 +20,7 @@ mcp = FastMCP('openBISgentic')
 @mcp.tool()
 def get_instruments() -> str:
     """
-    Fetch name and permID for all lab instruments, devices, machines, and testing equipment that are registered in the
+    Fetch name and permanent identifier (permId) for all lab instruments, devices, machines, and testing equipment that are registered in the
     INSTRUMENTS space of this openBIS instance. Convert it to json formatted list with the name and the permID of the instruments.
 
     Usage:
@@ -32,7 +32,7 @@ def get_instruments() -> str:
 @mcp.tool()
 def get_instruments_details(permId: str) -> str:
     """
-    Fetch details about an instrument, device, machine, and testing equipment with the specified permID registered in the
+    Fetch details like location, manufacturer, and description about an instrument, device, machine, and testing equipment with the specified permanent identifier (permID) registered in the
     INSTRUMENTS space of this openBIS instance. Returns a json formatted dict containing details of the instruments.
 
     Usage:
