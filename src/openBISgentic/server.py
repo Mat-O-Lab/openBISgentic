@@ -4,13 +4,14 @@ from mcp.server.fastmcp import FastMCP
 from mcp.shared.exceptions import McpError
 from mcp.types import ErrorData, INTERNAL_ERROR, INVALID_PARAMS
 import json
+import os
 
 import pybis
 
 openbis_url='https://bam-openbis02.germanywestcentral.cloudapp.azure.com/'
 
 o = pybis.Openbis(openbis_url, verify_certificates=False)
-o.set_token("nsiemer-250410080805635x5A9229B77C71636B42A083980D101EB5")
+o.set_token(os.environ['OPENBIS_TOKEN'])
 if not o.is_session_active():
     raise RuntimeError('openBIS not active')
 
